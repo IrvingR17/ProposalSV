@@ -3,18 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>¿Quieres ser mi San Valentín?</title>
     <style>
+        @font-face {
+            font-family: "LoveHouse";
+            src: url("fonts/LoveHouse.otf") format("opentype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: "LoveHouse", Arial, sans-serif;
             text-align: center;
             background-color: #ffe6e6;
             color: #d63384;
             overflow: hidden;
             position: relative;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
         }
         .container {
-            margin-top: 100px;
+            margin-bottom: 40px;
         }
         h1 {
             font-size: 2.5em;
@@ -42,12 +60,11 @@
         .hidden {
             display: none;
         }
-        /* Animación de latido */
         .heart-beat {
             font-size: 3em;
             color: red;
             display: inline-block;
-            animation: beat 0.6s infinite alternate ease-in-out;
+            animation: beat 1.5s infinite alternate ease-in-out;
             will-change: transform;
         }
         @keyframes beat {
@@ -61,16 +78,30 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>¿Quieres ser mi San Valentín? 💖</h1>
-        <div class="buttons">
-            <button class="yes" onclick="showCelebration()">¡Sí!</button>
-            <button class="no" onmouseover="moveButton()">No</button>
+    <section>
+        <div class="container">
+            <!-- <h1>Lorem ipsum dolor sit, amet consectetur adipisicing</h1> <br>
+            <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla aspernatur</h2> -->
+            <h1>Hola mi amor, ¿Quieres ser mi San Valentín?💖</h1> <br>
+            <h2>Eres alguien muy especial para mi y quisiera pasarlo a tu lado</h2>
+            <div class="buttons">
+                <button class="yes" onclick="showCelebration()">¡Sí!</button>
+                <button class="no" onmouseover="moveButton()">No</button>                
+                <!-- <button class="yes" onclick="showCelebration()">¡as!</button>
+                <button class="no" onmouseover="moveButton()">as</button> -->
+            </div>
         </div>
-    </div>
-    <div class="hidden" id="celebration">
-        <h2>¡Sabía que dirías que sí! ¡Gracias! <span class="heart-beat">❤️</span></h2>
-    </div>
+        <div class="hidden" id="celebration">
+            <h2>¡Sabía que dirías que sí! ¡Gracias!</h2> <br>
+            <h3>Te prometo que la pasaremos muy bien</h3> <br>
+            <h3>¡Te amo!</h3> <br>
+            <!-- <h2>Lorem ipsum dolor sit amet consectetur</h2> <br>
+            <h3>Lorem ipsum dolor sit amet consectetur</h3> <br>
+            <h3>Lorem ipsum</h3> <br> -->
+            <span class="heart-beat">❤️</span> <br>
+            <img src="images/loveKitties.gif" alt="">
+        </div>
+    </section>
     <script>
         function moveButton() {
             const button = document.querySelector('.no');
